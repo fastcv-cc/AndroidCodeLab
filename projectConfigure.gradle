@@ -1,0 +1,25 @@
+ext {
+    androidVersion = [
+            compileSdk : 33,
+            minSdk     : 19,
+            targetSdk  : 33,
+            versionCode: 10000,
+            versionName: "1.0.0",
+    ]
+
+    plugin = [
+    ]
+
+    dependency = [
+            //测试库
+            junit                   : "junit:junit:4.13.2",
+            androidxJunit           : "androidx.test.ext:junit:1.1.5",
+            androidxEspressoCore    : "androidx.test.espresso:espresso-core:3.5.1",
+            //官方依赖库
+            androidxCoreKtx         : "androidx.core:core-ktx:1.7.0",
+            androidxAppcompat       : "androidx.appcompat:appcompat:1.4.1",
+            material                : "com.google.android.material:material:1.4.0",
+            androidxActivity        : "androidx.activity:activity:1.4.0",
+            androidxConstraintlayout: "androidx.constraintlayout:constraintlayout:2.1.1"
+    ]
+}
