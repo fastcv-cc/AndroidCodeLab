@@ -1,2 +1,6 @@
 include ':app'
 rootProject.name = "AndroidCodeLab"
+
+include ':libs'
+include ':libs:logger'
+include ':libs:app'

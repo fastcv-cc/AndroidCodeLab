@@ -28,3 +28,21 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
 
 依赖与应用版本控制使用的是[GroovyExt扩展函数](./doc/gradle/agp/GroovyExt扩展函数实现版本控制.md)的方式进行管理的。
 
+
+
+
+
+# 项目内容
+
+## libs
+
+依赖库集合。自己实现/模仿（借鉴）的库的实现都在这里。
+
+
+
+### Logger
+
+一个日志打印库。[Logger库说明文档](./doc/libs/logger/Logger库说明文档.md)
+
+
+

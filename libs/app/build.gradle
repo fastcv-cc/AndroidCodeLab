@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+
+android {
+    compileSdk rootProject.ext.androidVersion.compileSdk
+
+    defaultConfig {
+        applicationId "cc.fastcv.libs.app"
+        minSdk rootProject.ext.androidVersion.minSdk
+        targetSdk rootProject.ext.androidVersion.targetSdk
+        versionCode rootProject.ext.androidVersion.versionCode
+        versionName rootProject.ext.androidVersion.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+    implementation rootProject.ext.dependency.androidxCoreKtx
+    implementation rootProject.ext.dependency.androidxAppcompat
+    implementation rootProject.ext.dependency.material
+    implementation rootProject.ext.dependency.androidxActivity
+    implementation rootProject.ext.dependency.androidxConstraintlayout
+
+    implementation project(":libs:logger")
+}
