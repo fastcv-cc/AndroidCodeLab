@@ -5,7 +5,7 @@
 
 # 项目配置
 
-[AGP、KGP及相关版本说明](./doc/gradle/agp/AGP-KGP及相关版本说明)
+[AGP、KGP及相关版本说明](./doc/gradle/agp/AGP-KGP及相关版本说明.md)
 
 ## 2025/03/04
 新建此项目，版本配置为：
@@ -26,5 +26,5 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
 
 
 
-依赖与应用版本控制使用的是[GroovyExt扩展函数](./doc/gradle/agp/GroovyExt扩展函数实现版本控制)的方式进行管理的。
+依赖与应用版本控制使用的是[GroovyExt扩展函数](./doc/gradle/agp/GroovyExt扩展函数实现版本控制.md)的方式进行管理的。
 
