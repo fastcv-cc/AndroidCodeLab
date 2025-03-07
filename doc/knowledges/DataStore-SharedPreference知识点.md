@@ -672,7 +672,7 @@ message Config {
 ```
 
 然后直接 **make project** 就生成了我们需要的代码。**切记，要构建下我们的项目才行。**
-![image-20250305162223579](/Users/pisto/Dev/android/sss/AndroidCodeLab/doc/knowledges/assets/image-20250305162223579.png)
+![image-20250305162223579](./assets/image-20250305162223579.png)
 
 接下来的所有操作都是围绕这个进行的。
 
