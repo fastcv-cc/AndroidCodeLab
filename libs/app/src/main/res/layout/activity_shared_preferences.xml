@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SharedPreferences使用"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="写值"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="读值"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="监听值变化"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="清除键值对"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

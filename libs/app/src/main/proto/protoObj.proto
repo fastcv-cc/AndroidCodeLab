@@ -1,0 +1,31 @@
+//申明协议版本
+syntax = "proto3";
+
+//生成的代码文件的路径
+option java_package = "cc.fastcv.libs.app.proto";
+//允许生成多个文件
+option java_multiple_files = true;
+
+//定义数据结构
+message ProtoObj {
+    string name = 1;
+    int32 age = 2;
+    string address = 3;
+    reserved 4;
+    double money = 5;
+    float weight = 6;
+    int64 birthday = 7;
+    bool is_man = 8;
+    repeated Car cars = 9;
+    repeated Children childrens = 10;
+}
+
+message Car {
+    string name = 1;
+    int32 price = 2;
+}
+
+message Children {
+    string name = 1;
+    int32 age = 2;
+}

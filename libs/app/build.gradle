@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.protobuf'
 }
 
 
@@ -19,6 +20,10 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -38,6 +43,37 @@ dependencies {
     implementation rootProject.ext.dependency.material
     implementation rootProject.ext.dependency.androidxActivity
     implementation rootProject.ext.dependency.androidxConstraintlayout
+    implementation rootProject.ext.dependency.lifecycleRuntimeKtx
+    implementation rootProject.ext.dependency.lifecycleService
+    implementation rootProject.ext.dependency.datastorePreferences
+    implementation rootProject.ext.dependency.datastorePreferencesCore
+    implementation rootProject.ext.dependency.datastore
+    implementation rootProject.ext.dependency.datastoreCore
+    implementation rootProject.ext.dependency.protobufJavalite
 
     implementation project(":libs:logger")
+    implementation project(":libs:local_data_store")
+
+}
+
+protobuf {
+    protoc {
+        //m1电脑适配环境
+        if (osdetector.os == "osx") {
+            artifact = "com.google.protobuf:protoc:3.10.0:osx-x86_64"
+        } else {
+            artifact = "com.google.protobuf:protoc:3.10.0"
+        }
+    }
+
+    // 为该项目中的 Protobufs 生成 java Protobuf-lite 代码。
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
 }

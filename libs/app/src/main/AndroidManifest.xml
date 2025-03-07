@@ -18,6 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".logger.LoggerActivity" />
+        <activity android:name=".local_data_store.SharedPreferencesActivity" />
+        <activity android:name=".local_data_store.LocalDataStoreActivity" />
+        <activity android:name=".local_data_store.PreferencesDataStoreActivity" />
+        <activity android:name=".local_data_store.ProtoDataStoreActivity" />
+
+        <service android:name=".OtherProcessService" android:process=":other" />
     </application>
 
 </manifest>

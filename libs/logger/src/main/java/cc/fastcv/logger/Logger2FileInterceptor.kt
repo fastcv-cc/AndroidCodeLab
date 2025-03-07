@@ -68,11 +68,12 @@ internal class Logger2FileInterceptor(private val context: Context): AbsLogInter
             }
 
             val date = Date()
-            val needWriteMessage: String = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA).format(date)
+            val needWriteMessage: String = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.CHINA).format(date)
                 .toString() + "    " + tag + "    " + logMsg + "\n"
             try {
                 file!!.appendText(needWriteMessage)
             } catch (e: Exception) {
+                e.printStackTrace()
                 return@post
             }
         }

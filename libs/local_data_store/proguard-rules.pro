@@ -19,13 +19,3 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-# 保留 Kotlin 反射
--keep class kotlin.** { *; }
--keep class kotlinx.** { *; }
-
-# 保留 Parcelize 相关代码
-# Parcelize 相关规则
--keep class kotlinx.parcelize.** { *; }
--keepclassmembers class * implements android.os.Parcelable {
-    public static final android.os.Parcelable$Creator *;
-}

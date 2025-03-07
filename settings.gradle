@@ -1,6 +1,9 @@
 include ':app'
 rootProject.name = "AndroidCodeLab"
 
-include ':libs'
 include ':libs:logger'
 include ':libs:app'
+include ':libs:local_data_store'
+
+include ':demos'
+include ':demos:datastore'
