@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cc.fastcv.uis.app">
+
+    <application>
+        <activity
+            android:name=".UisMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".simple_number_clock.SimpleNumberClockActivity"
+            android:exported="false" />
+
+    </application>
+</manifest>

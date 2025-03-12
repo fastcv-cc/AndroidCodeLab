@@ -21,9 +21,16 @@ ext {
             androidxAppcompat       : "androidx.appcompat:appcompat:1.4.1",
             material                : "com.google.android.material:material:1.4.0",
             androidxActivity        : "androidx.activity:activity:1.4.0",
+            androidxActivityKtx     : "androidx.activity:activity-ktx:1.4.0",
+            androidxFragment        : "androidx.fragment:fragment:1.4.0",
+            androidxFragmentKtx     : "androidx.fragment:fragment-ktx:1.4.0",
+
             androidxConstraintlayout: "androidx.constraintlayout:constraintlayout:2.1.1",
             lifecycleRuntimeKtx     : "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0",
+            lifecycleViewmodelKtx   : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0",
             lifecycleService        : "androidx.lifecycle:lifecycle-service:2.4.0",
+            lifecycleLivedataKtx    : "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0",
+
             //DataStore
             datastorePreferences    : "androidx.datastore:datastore-preferences:1.1.0",
             datastorePreferencesCore: "androidx.datastore:datastore-preferences-core:1.1.0",

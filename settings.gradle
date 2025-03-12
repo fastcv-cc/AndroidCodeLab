@@ -5,5 +5,12 @@ include ':libs:logger'
 include ':libs:app'
 include ':libs:local_data_store'
 
+
+include ':uis'
+
 include ':demos'
 include ':demos:datastore'
+include ':libs:viewmodel_event_bus'
+include ':uis:app'
+include ':uis:simple_number_clock'
+include ':lab_base'

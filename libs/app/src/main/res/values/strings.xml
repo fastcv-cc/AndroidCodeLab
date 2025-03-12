@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">app</string>
-    <string name="title_logger">Logger库</string>
-    <string name="title_local_datastore">LocalDataStore库</string>
-</resources>

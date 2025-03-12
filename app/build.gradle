@@ -33,9 +33,7 @@ android {
 }
 
 dependencies {
-    implementation rootProject.ext.dependency.androidxCoreKtx
-    implementation rootProject.ext.dependency.androidxAppcompat
-    implementation rootProject.ext.dependency.material
-    implementation rootProject.ext.dependency.androidxActivity
-    implementation rootProject.ext.dependency.androidxConstraintlayout
+    implementation project(":lab_base")
+    implementation project(":libs:app")
+    implementation project(":uis:app")
 }

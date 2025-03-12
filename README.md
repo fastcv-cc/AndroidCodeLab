@@ -15,7 +15,9 @@
 
 # 项目配置
 
-[AGP、KGP及相关版本说明](./doc/gradle/agp/AGP-KGP及相关版本说明.md)
+参考文档：
+
+[AGP-KGP知识点](./doc/gradle/agp/AGP-KGP知识点.md)
 
 
 
@@ -38,7 +40,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
 
 
 
-依赖与应用版本控制使用的是[GroovyExt扩展函数](./doc/gradle/agp/GroovyExt扩展函数实现版本控制.md)的方式进行管理的。
+依赖与应用版本控制使用的是**GroovyExt扩展函数**的方式进行管理的。
 
 
 
@@ -64,9 +66,9 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
 
 整个项目维护开发遇到的问题分类收集。
 
-| 问题分类 | 文档地址                                       |
-| -------- | ---------------------------------------------- |
-| 编译异常 | [编译异常](./doc/gradle/agp/编译异常问题集.md) |
-|          |                                                |
-|          |                                                |
+| 问题分类 | 文档地址                                             |
+| -------- | ---------------------------------------------------- |
+| 编译异常 | [编译异常问题集](./doc/gradle/agp/编译异常问题集.md) |
+|          |                                                      |
+|          |                                                      |
 

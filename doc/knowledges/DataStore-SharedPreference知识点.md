@@ -904,3 +904,17 @@ DataStore 提供了一个损坏处理程序 API，可帮助您在这种情况下
 - 切勿对同一个文件混用 SingleProcessDataStore 和 MultiProcessDataStore。如果您打算从多个进程访问 DataStore，请始终使用 MultiProcessDataStore。
 - **不一定非要使用  protocol-buffers ，哈哈哈，我也是最后才发现。只要能提供serializer的实现类就行了。这里官方通过  protocol-buffers 来保证序列化的正确性，保证了类型安全。你完全可以使用gson实现。**
 
+
+
+# 更新
+
+## 2025/03/08
+
+补充个DataStore版本更新变化文档地址
+
+https://developer.android.google.cn/jetpack/androidx/releases/datastore?hl=zh-cn&authuser=0
+
+
+
+
+

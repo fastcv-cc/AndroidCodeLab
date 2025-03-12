@@ -13,6 +13,8 @@ object FastLogger {
 
     var logSave2File = false
 
+    var tagPrefix = ""
+
     fun initLogger(context: Context) {
         if (initialized) {
             initialized = true

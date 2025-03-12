@@ -1,29 +1,26 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.protobuf'
 }
-
 
 android {
     compileSdk rootProject.ext.androidVersion.compileSdk
 
     defaultConfig {
-        applicationId "cc.fastcv.libs.app"
         minSdk rootProject.ext.androidVersion.minSdk
-        targetSdk rootProject.ext.androidVersion.targetSdk
-        versionCode rootProject.ext.androidVersion.versionCode
-        versionName rootProject.ext.androidVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    sourceSets {
+        main{
+            res.srcDirs += ['src/main/res_logger','src/main/res_local_data_store','src/main/res_view_model_event_bus']
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -42,17 +39,21 @@ dependencies {
     implementation rootProject.ext.dependency.androidxAppcompat
     implementation rootProject.ext.dependency.material
     implementation rootProject.ext.dependency.androidxActivity
+    implementation rootProject.ext.dependency.androidxActivityKtx
+    implementation rootProject.ext.dependency.androidxFragment
+    implementation rootProject.ext.dependency.androidxFragmentKtx
+
     implementation rootProject.ext.dependency.androidxConstraintlayout
     implementation rootProject.ext.dependency.lifecycleRuntimeKtx
     implementation rootProject.ext.dependency.lifecycleService
+    implementation rootProject.ext.dependency.lifecycleLivedataKtx
     implementation rootProject.ext.dependency.datastorePreferences
     implementation rootProject.ext.dependency.datastorePreferencesCore
     implementation rootProject.ext.dependency.datastore
     implementation rootProject.ext.dependency.datastoreCore
     implementation rootProject.ext.dependency.protobufJavalite
 
-    implementation project(":libs:logger")
-    implementation project(":libs:local_data_store")
+    implementation project(":lab_base")
 
 }
 
