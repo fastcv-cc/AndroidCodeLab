@@ -30,11 +30,11 @@ android {
 
 dependencies {
     api rootProject.ext.dependency.androidxCoreKtx
-    api rootProject.ext.dependency.androidxAppcompat
-    api rootProject.ext.dependency.material
     api rootProject.ext.dependency.androidxActivity
     api rootProject.ext.dependency.androidxConstraintlayout
 
     api project(":libs:logger")
+    api project(":libs:basic_general")
+    api project(":libs:recyclerview_ext")
     api project(":libs:local_data_store")
 }

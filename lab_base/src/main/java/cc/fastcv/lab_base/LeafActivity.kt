@@ -1,5 +1,5 @@
 package cc.fastcv.lab_base
 
-import androidx.appcompat.app.AppCompatActivity
+import cc.fastcv.basic_general.activity.BaseActivity
 
-open class LeafActivity : AppCompatActivity()
+open class LeafActivity : BaseActivity()

@@ -1,73 +1,60 @@
 package cc.fastcv.libs.app.local_data_store
 
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.core.DataStore
-import androidx.datastore.core.MultiProcessDataStoreFactory
-import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
+import android.view.View
 import androidx.lifecycle.lifecycleScope
-import cc.fastcv.libs.app.OtherProcessService
-import cc.fastcv.libs.app.R
-import cc.fastcv.libs.app.proto.MultiProtoObj
+import cc.fastcv.lab_base.LibItem
+import cc.fastcv.lab_base.TreeActivity
+import cc.fastcv.libs.app.local_data_store.multi_process_data_store.MultiProcessDataStoreActivity
+import cc.fastcv.libs.app.local_data_store.preferences_data_store.PreferencesDataStoreActivity
+import cc.fastcv.libs.app.local_data_store.proto_data_store.ProtoDataStoreActivity
+import cc.fastcv.libs.app.local_data_store.shared_preferences.SharedPreferencesActivity
 import cc.fastcv.local_data_store.LocalDataStore
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.io.File
 
-private const val TAG = "LocalDataStoreActivity"
+class LocalDataStoreActivity : TreeActivity() {
 
-class LocalDataStoreActivity : AppCompatActivity() {
-
-    private val dataStore: DataStore<MultiProtoObj> = MultiProcessDataStoreFactory.create(
-        serializer = MultiProtoObjSerializer,
-        produceFile = {
-            File("${cacheDir.path}/multi_proto_obj.preferences_pb")
-        },
-        corruptionHandler = ReplaceFileCorruptionHandler { MultiProtoObj.getDefaultInstance() }
-    )
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_local_data_store)
-
-        findViewById<Button>(R.id.bt1).setOnClickListener {
-            startActivity(Intent(this, SharedPreferencesActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.bt2).setOnClickListener {
-            startActivity(Intent(this, PreferencesDataStoreActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.bt3).setOnClickListener {
-            startActivity(Intent(this, ProtoDataStoreActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.bt4).setOnClickListener {
-            lifecycleScope.launch {
-                Log.d(TAG, "启动OtherProcessService服务")
-                startService(Intent(this@LocalDataStoreActivity, OtherProcessService::class.java))
-                Log.d(TAG, "3秒后修改MultiProtoObj DataStore的值")
-                delay(3000)
-                dataStore.updateData {
-                    it.toBuilder()
-                        .setName("王五")
-                        .setAge((System.currentTimeMillis() / 10000).toInt())
-                        .build()
-                }
-            }
-        }
-
-        findViewById<Button>(R.id.bt5).setOnClickListener {
-            testLocalDataStoreFunction()
-        }
-
+    companion object {
+        private const val TAG = "LocalDataStoreActivity"
     }
 
-    private fun testLocalDataStoreFunction() {
+    override fun buildLibItemList(): List<LibItem> {
+        return listOf(
+            LibItem(
+                "SharedPreferences使用",
+                "SharedPreferences使用",
+                Intent(this, SharedPreferencesActivity::class.java)
+            ),
+            LibItem(
+                "PreferencesDataStore使用",
+                "PreferencesDataStore使用",
+                Intent(this, PreferencesDataStoreActivity::class.java)
+            ),
+            LibItem(
+                "ProtoDataStore使用",
+                "ProtoDataStore使用",
+                Intent(this, ProtoDataStoreActivity::class.java)
+            ),
+            LibItem(
+                "MultiProcessDataStore使用",
+                "MultiProcessDataStore使用",
+                Intent(this, MultiProcessDataStoreActivity::class.java)
+            ),
+            LibItem("库功能测试", "库功能测试", Intent()),
+        )
+    }
 
+    override fun onItemClick(view: View?, position: Int, t: LibItem) {
+        if (position == 4) {
+            testLocalDataStoreFunction()
+        } else {
+            super.onItemClick(view, position, t)
+        }
+    }
+
+
+    private fun testLocalDataStoreFunction() {
         lifecycleScope.launch {
             val storeName = "localDataStore"
             val stringKey = "stringKey"
@@ -85,11 +72,16 @@ class LocalDataStoreActivity : AppCompatActivity() {
             )
             Log.d(TAG, "testLocalDataStoreFunction: stringValue = $stringValue")
             val objKey = "objKey"
-            LocalDataStore.saveObj(this@LocalDataStoreActivity,storeName,objKey,LocalDataStoreEntity("Hello",20))
+            LocalDataStore.saveObj(
+                this@LocalDataStoreActivity,
+                storeName,
+                objKey,
+                LocalDataStoreEntity("Hello", 20)
+            )
             val objValue = LocalDataStore.getObj(
                 this@LocalDataStoreActivity,
                 storeName,
-                objKey,LocalDataStoreEntity::class.java
+                objKey, LocalDataStoreEntity::class.java
             )
             Log.d(TAG, "testLocalDataStoreFunction: objValue = $objValue")
         }

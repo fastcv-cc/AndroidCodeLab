@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="cc.fastcv.file_manager">
+
+    <application>
+        <activity android:name=".dic.FileManagerActivity" />
+        <activity android:name=".dic.DocumentManagerActivity" />
+        <activity android:name=".ImageShowActivity" />
+        <activity android:name=".VideoShowActivity" />
+        <activity android:name=".FileListManagerActivity" />
+    </application>
+</manifest>

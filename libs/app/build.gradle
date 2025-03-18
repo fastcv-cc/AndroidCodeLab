@@ -14,8 +14,12 @@ android {
     }
 
     sourceSets {
-        main{
-            res.srcDirs += ['src/main/res_logger','src/main/res_local_data_store','src/main/res_view_model_event_bus']
+        main {
+            res.srcDirs += ['src/main/res_logger'
+                            , 'src/main/res_local_data_store',
+                            'src/main/res_view_model_event_bus',
+                            'src/main/res_file_manager',
+            ]
         }
     }
 
@@ -54,6 +58,7 @@ dependencies {
     implementation rootProject.ext.dependency.protobufJavalite
 
     implementation project(":lab_base")
+    implementation project(":libs:file_manager")
 
 }
 

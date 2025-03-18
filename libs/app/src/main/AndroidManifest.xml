@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="cc.fastcv.libs.app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cc.fastcv.libs.app">
+
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <!-- Required only if your app needs to access images or photos
+     that other apps created. -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- Required only if your app needs to access videos
+         that other apps created. -->
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <!-- Required only if your app needs to access audio files
+         that other apps created. -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
 
     <application>
 
         <activity android:name=".LibsMainActivity" />
         <activity android:name=".logger.LoggerActivity" />
-        <activity android:name=".local_data_store.SharedPreferencesActivity" />
+        <activity android:name=".local_data_store.shared_preferences.SharedPreferencesActivity" />
         <activity android:name=".local_data_store.LocalDataStoreActivity" />
-        <activity android:name=".local_data_store.PreferencesDataStoreActivity" />
-        <activity android:name=".local_data_store.ProtoDataStoreActivity" />
+        <activity android:name=".local_data_store.preferences_data_store.PreferencesDataStoreActivity" />
+        <activity android:name=".local_data_store.proto_data_store.ProtoDataStoreActivity" />
         <activity android:name=".view_model_event_bus.ViewModelEventBusActivity" />
         <activity android:name=".view_model_event_bus.LifecycleActivity" />
+        <activity android:name=".local_data_store.multi_process_data_store.MultiProcessDataStoreActivity" />
+        <activity android:name=".file_manager.FileManagerMainActivity" />
+        <activity android:name=".file_manager.internal_storage.InternalStorageActivity" />
+        <activity android:name=".file_manager.external_private_storage.ExternalPrivateStorageActivity" />
+        <activity android:name=".file_manager.external_public_storage.ExternalPublicStorageActivity" />
+        <activity android:name=".file_manager.saf.SAFActivity" />
+        <activity android:name=".file_manager.media_store.MediaStoreActivity" />
+        <activity android:name=".file_manager.media_store.MediaStoreImagesActivity" />
+        <activity android:name=".file_manager.media_store.MediaStoreVideoActivity" />
+        <activity android:name=".file_manager.media_store.MediaStoreAudioActivity" />
+        <activity android:name=".file_manager.media_store.MediaStoreDownloadsActivity" />
+        <activity android:name=".file_manager.media_store.MediaStoreFileActivity" />
 
-        <service android:name=".OtherProcessService" android:process=":other" />
+        <service
+            android:name=".local_data_store.multi_process_data_store.OtherProcessService"
+            android:process=":other" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="cc.fastcv.libs.app.file_manager.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider" />
+        </provider>
     </application>
 
 </manifest>

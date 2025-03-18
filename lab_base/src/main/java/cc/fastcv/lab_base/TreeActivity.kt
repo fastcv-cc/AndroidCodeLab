@@ -2,52 +2,51 @@ package cc.fastcv.lab_base
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import cc.fastcv.basic_general.activity.BaseActivity
+import cc.fastcv.recyclerview_ext.BaseRecyclerViewAdapter
+import cc.fastcv.recyclerview_ext.BaseViewHolder
+import cc.fastcv.recyclerview_ext.OnItemClickListener
 
-abstract class TreeActivity : AppCompatActivity() {
+abstract class TreeActivity : BaseActivity(), OnItemClickListener<LibItem> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tree)
 
         val rvItem = findViewById<RecyclerView>(R.id.rvItem)
-        rvItem.adapter = ItemAdapter(buildLibItemList())
+        val adapter = ItemAdapter(buildLibItemList())
+        rvItem.adapter = adapter
+        adapter.setOnItemClickListener(this)
     }
 
     abstract fun buildLibItemList(): List<LibItem>
+
+    override fun onItemClick(view: View?, position: Int, t: LibItem) {
+        startActivity(t.intent)
+    }
 
 }
 
 data class LibItem(val title: String, val description: String, val intent: Intent)
 
-private class ItemAdapter(val items: List<LibItem>) : RecyclerView.Adapter<ItemViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.layout_item_lib, parent, false)
-        return ItemViewHolder(itemView)
+private class ItemAdapter(val items: List<LibItem>) : BaseRecyclerViewAdapter<LibItem>() {
+    override fun getLayoutId(viewType: Int): Int {
+        return R.layout.layout_item_lib
     }
 
-    override fun getItemCount(): Int {
+    override fun getDataByPosition(position: Int): LibItem {
+        return items[position]
+    }
+
+    override fun getTotalSize(): Int {
         return items.size
     }
 
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.tvTitle.text = items[position].title
-        holder.tvDescription.text = items[position].description
-        holder.itemView.setOnClickListener {
-            it.context.startActivity(items[position].intent)
-        }
+    override fun convert(holder: BaseViewHolder, data: LibItem, position: Int) {
+        holder.getView<TextView>(R.id.tvTitle).text = items[position].title
+        holder.getView<TextView>(R.id.tvDescription).text = items[position].description
     }
-
-}
-
-private class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
-    val tvDescription: TextView = itemView.findViewById(R.id.tvDescription)
-
 }

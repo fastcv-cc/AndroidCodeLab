@@ -31,4 +31,5 @@ dependencies {
     implementation project(":lab_base")
 
     implementation project(":uis:simple_number_clock")
+    implementation project(":uis:compass_view")
 }

@@ -18,42 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="SharedPreferences使用"
-        android:textAllCaps="false"
-        android:id="@+id/bt1"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="PreferencesDataStore使用"
-        android:textAllCaps="false"
-        android:id="@+id/bt2"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="ProtoDataStore使用"
-        android:textAllCaps="false"
-        android:id="@+id/bt3"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="DataStore在多进程情况下使用"
-        android:textAllCaps="false"
-        android:id="@+id/bt4"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:text="LocalDataStore库功能测试"
         android:textAllCaps="false"
         android:id="@+id/bt5"

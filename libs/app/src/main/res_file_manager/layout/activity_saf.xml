@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="SAF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:text="在 Android 4.3 及更低版本中，可以调用 ACTION_PICK 或 ACTION_GET_CONTENT 等 intent。通过它俩获取的uri无法申请持久化访问权限"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="ACTION_PICK"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="ACTION_GET_CONTENT"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:text="在 Android 4.4（API 级别 19）及更高版本中，可以选择使用 ACTION_OPEN_DOCUMENT intent。通过它获取的uri可以申请持久化访问权限"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="ACTION_OPEN_DOCUMENT"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt3Restart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="重新打开上次单选的uri"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:text="在 Android 5.0（API 级别 21）及更高版本中，还可以使用 ACTION_OPEN_DOCUMENT_TREE intent,。通过它获取的目录uri可以申请持久化访问权限，但是下次不能打开！"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="ACTION_OPEN_DOCUMENT_TREE"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bt5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="打印所有已持久化授权的uri"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
