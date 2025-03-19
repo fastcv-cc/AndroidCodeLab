@@ -33,9 +33,11 @@ android {
 }
 
 dependencies {
-    implementation project(":lab_base")
-    implementation project(":libs:app")
-    implementation project(":libs:app_trace")
-    implementation project(":uis:app")
-    implementation project(":demo:app")
+    implementation rootProject.ext.dependency.androidxCoreKtx
+    implementation rootProject.ext.dependency.androidxActivity
+    implementation rootProject.ext.dependency.androidxConstraintlayout
+    implementation rootProject.ext.dependency.androidxAppcompat
+
+    compileOnly 'de.robv.android.xposed:api:82'
+    compileOnly 'de.robv.android.xposed:api:82:sources'
 }

@@ -1,18 +1,28 @@
 include ':app'
+include ':lab_base'
 rootProject.name = "AndroidCodeLab"
 
-include ':libs:logger'
+//libs
 include ':libs:app'
+include ':libs:logger'
 include ':libs:local_data_store'
-
-include ':demos'
-include ':demos:datastore'
 include ':libs:viewmodel_event_bus'
-include ':uis:app'
-include ':uis:simple_number_clock'
-include ':lab_base'
 include ':libs:basic_general'
 include ':libs:recyclerview_ext'
 include ':libs:file_manager'
-include ':uis:compass_view'
 include ':libs:app_trace'
+include ':libs:i18n'
+
+//uis
+include ':uis:app'
+include ':uis:simple_number_clock'
+include ':uis:compass_view'
+
+//assistant
+include ':assistant'
+
+//demo
+include ':demo'
+
+include ':demo:app'
+include ':demo:sql'

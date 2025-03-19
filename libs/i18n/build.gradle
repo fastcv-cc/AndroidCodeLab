@@ -1,20 +1,17 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
-
 android {
+
     compileSdk rootProject.ext.androidVersion.compileSdk
 
     defaultConfig {
-        applicationId "cc.fastcv.codelab"
         minSdk rootProject.ext.androidVersion.minSdk
-        targetSdk rootProject.ext.androidVersion.targetSdk
-        versionCode rootProject.ext.androidVersion.versionCode
-        versionName rootProject.ext.androidVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -33,9 +30,4 @@ android {
 }
 
 dependencies {
-    implementation project(":lab_base")
-    implementation project(":libs:app")
-    implementation project(":libs:app_trace")
-    implementation project(":uis:app")
-    implementation project(":demo:app")
 }

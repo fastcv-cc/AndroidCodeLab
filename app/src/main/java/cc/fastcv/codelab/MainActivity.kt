@@ -1,6 +1,7 @@
 package cc.fastcv.codelab
 
 import android.content.Intent
+import cc.fastcv.demo.app.DemoMainActivity
 import cc.fastcv.lab_base.LibItem
 import cc.fastcv.lab_base.TreeActivity
 import cc.fastcv.libs.app.LibsMainActivity
@@ -18,6 +19,11 @@ class MainActivity : TreeActivity() {
                 "UI库集合",
                 "自己实现的UI库及其测试项",
                 Intent(this, UisMainActivity::class.java)
+            ),
+            LibItem(
+                "demo集合",
+                "许多功能实现测试demo的集合",
+                Intent(this, DemoMainActivity::class.java)
             ),
         )
     }
