@@ -1,13 +1,15 @@
-package cc.fastcv.lab_base
+package cc.fastcv.codelab
 
 import android.app.Application
+import cc.fastcv.app_trace.AppTracer
 import cc.fastcv.logger.FastLogger
 
-class LabApp : Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
         initLogger()
+        AppTracer.attach(this)
     }
 
     private fun initLogger() {
