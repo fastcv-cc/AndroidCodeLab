@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <include
+            layout="@layout/basis_layout_coordinate_system"
+            tools:visibility="gone" />
+
+        <include
+            layout="@layout/basis_layout_screen_area"
+            tools:visibility="gone" />
+
+        <include
+            layout="@layout/basis_layout_deg_and_rad"
+            tools:visibility="gone" />
+
+        <include
+            layout="@layout/basis_layout_colors"
+            tools:visibility="gone" />
+
+        <include
+            layout="@layout/basis_layout_unit"
+            tools:visibility="gone" />
+
+        <include
+            layout="@layout/basis_layout_slide"
+            tools:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="硬件加速检测"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android从3.0（API Level 11）开始，在绘制View的时候支持硬件加速，充分利用GPU的特性，使得绘制更加平滑，但是会多消耗一些内存"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="当前Window是否开启了硬件加速："
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_hs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

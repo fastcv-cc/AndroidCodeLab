@@ -5,7 +5,7 @@ import cc.fastcv.lab_base.LibItem
 import cc.fastcv.lab_base.TreeActivity
 import cc.fastcv.sql.sqlite.SqliteActivity
 
-class SqlActivity : TreeActivity() {
+class SqlMainActivity : TreeActivity() {
     override fun buildLibItemList(): List<LibItem> {
         return listOf(
             LibItem(

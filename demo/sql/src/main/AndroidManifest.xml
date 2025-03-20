@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="cc.fastcv.sql">
 
     <application>
-        <activity android:name=".SqlActivity" />
+        <activity android:name=".SqlMainActivity" />
         <activity android:name=".sqlite.SqliteActivity" />
     </application>
 </manifest>

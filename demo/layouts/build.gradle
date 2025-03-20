@@ -12,12 +12,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    sourceSets {
-        main {
-            res.srcDirs += []
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -35,6 +29,4 @@ android {
 
 dependencies {
     implementation project(":lab_base")
-    implementation project(":demo:sql")
-    implementation project(":demo:layouts")
 }

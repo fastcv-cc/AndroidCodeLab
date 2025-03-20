@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="坐标系"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="在安卓中，坐标系分为两种，一种是基于屏幕的坐标系，一种是在view（viewgroup）中的坐标系。
+        \n与我们理解的坐标系不同的是，安卓坐标系的x轴向右为正方向，y轴向下为正方向。原点为view本身的左上角，屏幕的原点是屏幕的左上角。
+        \n如下，点击可得到在屏幕中的位置和在View中的位置："
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_content_bg"
+        android:padding="15dp">
+
+        <cc.fastcv.uis.app.theoretical_basis.custom.ClickShowView
+            android:id="@+id/csv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#42B36A" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="屏幕中："
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_position_in_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="View中："
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_position_in_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -26,3 +26,4 @@ include ':demo'
 
 include ':demo:app'
 include ':demo:sql'
+include ':demo:layouts'

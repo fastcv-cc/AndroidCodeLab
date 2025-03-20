@@ -10,6 +10,7 @@
             android:name=".simple_number_clock.SimpleNumberClockActivity"
             android:exported="false" />
         <activity android:name=".compass.CompassActivity" />
+        <activity android:name=".theoretical_basis.TheoreticalBasisActivity" />
 
     </application>
 </manifest>
