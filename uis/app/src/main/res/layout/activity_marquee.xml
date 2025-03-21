@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+        <cc.fastcv.uis.app.marquee.MarqueeTextView
+            android:id="@+id/amigoAddress"
+            android:layout_width="match_parent"
+            android:textColor="#222222"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:text="我是一段长文字 哈哈哈哈哈哈哈我是一段长文字 哈哈哈哈哈哈哈!"
+            android:focusableInTouchMode="true"
+            android:gravity="start"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        
+        <View
+            android:layout_width="match_parent"
+            android:background="#FF0000"
+            android:layout_height="300dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#FFF000"
+            android:layout_height="300dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#FFFF00"
+            android:layout_height="300dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#FFFFF0"
+            android:layout_height="300dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#FFFFFF"
+            android:layout_height="300dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="修改文字"
+            android:id="@+id/bt"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:ellipsize="marquee"-->
+<!--        android:id="@+id/amigoAddress"-->
+<!--        android:focusable="true"-->
+<!--        android:focusableInTouchMode="true"-->
+<!--        android:marqueeRepeatLimit="marquee_forever"-->
+<!--        android:scrollHorizontally="true"-->
+<!--        android:singleLine="true"-->
+<!--        android:text="我是一段长文字 哈哈哈哈哈哈哈我是一段长文字 哈哈哈哈哈哈哈"-->
+<!--        android:textColor="#9351e4"-->
+<!--        android:textSize="24sp" />-->
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cc.fastcv.uis.app.path_measure.SearchLoadingView
+        android:id="@+id/SearchLoadingView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_item_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="状态选择:"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:id="@+id/rg_state"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="初始化"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:id="@+id/rb_state_idle"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="准备"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:id="@+id/rb_state_prepare"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="搜索中"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:id="@+id/rb_state_searching"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="完成"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:id="@+id/rb_state_finished"
+            tools:ignore="HardcodedText" />
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进度控制:"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:layout_width="match_parent"
+        android:paddingVertical="10dp"
+        android:max="100000"
+        android:id="@+id/sb_progress"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/reduce"
+            android:layout_width="36dp"
+            android:layout_margin="10dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_reduce" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/value"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="0%"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/add"
+            android:layout_margin="10dp"
+            android:layout_width="36dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_add" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请切换到初始化状态再点击:"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放动画"
+        android:id="@+id/bt"
+        android:layout_margin="20dp"
+        android:background="@drawable/selector_main_bt_bg"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

@@ -3,10 +3,15 @@ package cc.fastcv.uis.app.theoretical_basis
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
+import android.graphics.Path
+import android.graphics.Path.FillType
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.*
+import android.view.View.MeasureSpec
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,6 +19,7 @@ import androidx.core.widget.NestedScrollView
 import cc.fastcv.uis.app.R
 import cc.fastcv.uis.app.theoretical_basis.custom.AngleCalcView
 import cc.fastcv.uis.app.theoretical_basis.custom.ClickShowView
+import cc.fastcv.uis.app.theoretical_basis.custom.PathFillTypeView
 import cc.fastcv.uis.app.theoretical_basis.custom.PressableTextView
 import cc.fastcv.uis.app.theoretical_basis.custom.SimpleSpeedometer
 import kotlin.math.PI
@@ -150,6 +156,53 @@ class TheoreticalBasisActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tv_hs).apply {
             text = "$isHardwareAccelerated"
+        }
+
+        var fillTypeIndex = 1
+        val fillType = findViewById<PathFillTypeView>(R.id.fillType)
+        val tvFillType = findViewById<TextView>(R.id.tvFillType)
+        fillType.setOnClickListener {
+            fillTypeIndex++
+            val index = fillTypeIndex % 4
+            when (index) {
+                0 -> {
+                    fillType.setFillType(FillType.WINDING)
+                    tvFillType.text = "FillType.WINDING"
+                }
+
+                1 -> {
+                    fillType.setFillType(FillType.EVEN_ODD)
+                    tvFillType.text = "FillType.EVEN_ODD"
+                }
+
+                2 -> {
+                    fillType.setFillType(FillType.INVERSE_WINDING)
+                    tvFillType.text = "FillType.INVERSE_WINDING"
+                }
+
+                3 -> {
+                    fillType.setFillType(FillType.INVERSE_EVEN_ODD)
+                    tvFillType.text = "FillType.INVERSE_EVEN_ODD"
+                }
+            }
+        }
+
+        findViewById<Button>(R.id.btCalc).setOnClickListener {
+            val value = findViewById<EditText>(R.id.etMeasureSpecValue).text.toString().toIntOrNull()
+                ?: return@setOnClickListener
+            val size = MeasureSpec.getSize(value)
+            val mode = MeasureSpec.getMode(value)
+
+            findViewById<TextView>(R.id.tvMeasureSpecValue).text = "" +
+                    "size值为：$size - mode为：${
+                        when (mode) {
+                            MeasureSpec.EXACTLY -> "MeasureSpec.EXACTLY"
+                            MeasureSpec.AT_MOST -> "MeasureSpec.AT_MOST"
+                            MeasureSpec.UNSPECIFIED -> "MeasureSpec.UNSPECIFIED"
+                            else -> "unknown"
+                        }
+                    }"
+
         }
     }
 

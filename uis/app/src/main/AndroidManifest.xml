@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cc.fastcv.uis.app">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application>
         <activity
             android:name=".UisMainActivity"
@@ -11,6 +13,19 @@
             android:exported="false" />
         <activity android:name=".compass.CompassActivity" />
         <activity android:name=".theoretical_basis.TheoreticalBasisActivity" />
+        <activity android:name=".overlapping_judge.OverlappingJudgeActivity" />
+        <activity android:name=".draw_spell.DrawSpellActivity" />
+        <activity android:name=".xfermode.XfermodeActivity" />
+        <activity android:name=".star.StarActivity" />
+        <activity android:name=".turntable.TurntableActivity" />
+        <activity android:name=".corner_frame_layout.CornerFrameLayoutActivity" />
+        <activity android:name=".roundprogressbar.RoundProgressBarActivity" />
+        <activity android:name=".bezier_curve.BezierCurveActivity" />
+        <activity android:name=".radar_view.RadarViewActivity" />
+        <activity android:name=".path_measure.PathMeasureActivity" />
+        <activity android:name=".text.TextActivity" />
+        <activity android:name=".inscribed_circle.InscribedCircleActivity" />
+        <activity android:name=".marquee.MarqueeTextViewActivity" />
 
     </application>
 </manifest>

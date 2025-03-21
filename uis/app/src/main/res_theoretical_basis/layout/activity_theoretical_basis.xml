@@ -70,6 +70,102 @@
             android:textColor="#000000"
             android:textSize="16sp" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Path填充模式"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击可以切换fillType："
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FillType.EVEN_ODD"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:id="@+id/tvFillType"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+       <cc.fastcv.uis.app.theoretical_basis.custom.PathFillTypeView
+           android:layout_width="200dp"
+           android:layout_height="200dp"
+           android:id="@+id/fillType"
+           android:layout_gravity="center_horizontal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="MeasureSpec计算器"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通过MeasureSpec的值推算"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:orientation="horizontal">
+
+
+           <EditText
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:id="@+id/etMeasureSpecValue"
+               android:inputType="numberSigned"
+               tools:ignore="LabelFor" />
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="计算"
+               android:layout_marginStart="15dp"
+               android:id="@+id/btCalc"
+               tools:ignore="HardcodedText" />
+
+       </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:id="@+id/tvMeasureSpecValue"
+            tools:ignore="HardcodedText" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
 
     </LinearLayout>
 
