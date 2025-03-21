@@ -37,4 +37,5 @@ dependencies {
     implementation project(":lab_base")
     implementation project(":demo:sql")
     implementation project(":demo:layouts")
+    implementation project(":demo:bitmap")
 }

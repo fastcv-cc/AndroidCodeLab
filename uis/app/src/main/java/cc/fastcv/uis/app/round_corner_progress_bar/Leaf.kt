@@ -1,4 +1,4 @@
-package cc.fastcv.uis.app.roundprogressbar
+package cc.fastcv.uis.app.round_corner_progress_bar
 
 class Leaf {
 

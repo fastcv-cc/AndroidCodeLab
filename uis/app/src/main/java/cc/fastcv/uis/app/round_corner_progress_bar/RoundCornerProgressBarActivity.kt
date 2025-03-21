@@ -1,17 +1,17 @@
-package cc.fastcv.uis.app.roundprogressbar
+package cc.fastcv.uis.app.round_corner_progress_bar
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import cc.fastcv.uis.app.R
 
-class RoundProgressBarActivity : AppCompatActivity() {
+class RoundCornerProgressBarActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_round_progress_bar)
+        setContentView(R.layout.activity_round_corner_progress_bar)
 
-        findViewById<RoundProgressBar>(R.id.rpb).setOnClickListener {
-            (it as RoundProgressBar).run()
+        findViewById<RoundCornerProgressBar>(R.id.rpb).setOnClickListener {
+            (it as RoundCornerProgressBar).run()
         }
 
         findViewById<LeafLoadingView>(R.id.llv).setOnClickListener {

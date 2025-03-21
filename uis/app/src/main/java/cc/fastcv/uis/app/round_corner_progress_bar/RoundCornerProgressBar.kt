@@ -1,4 +1,4 @@
-package cc.fastcv.uis.app.roundprogressbar
+package cc.fastcv.uis.app.round_corner_progress_bar
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -9,7 +9,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
 
-class RoundProgressBar : View {
+class RoundCornerProgressBar : View {
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)

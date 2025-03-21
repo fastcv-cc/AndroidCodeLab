@@ -12,13 +12,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    sourceSets {
-        main {
-            res.srcDirs += ['src/main/res_theoretical_basis'
-            ]
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -36,10 +29,4 @@ android {
 
 dependencies {
     implementation project(":lab_base")
-
-    implementation project(":uis:simple_number_clock")
-    implementation project(":uis:compass_view")
-    implementation project(":uis:date_switch_view")
-    implementation project(":uis:histogram")
-    implementation project(":uis:round_progress_bar")
 }

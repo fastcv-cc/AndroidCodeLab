@@ -1,6 +1,7 @@
 package cc.fastcv.demo.app
 
 import android.content.Intent
+import cc.fastcv.bitmap.BitmapMainActivity
 import cc.fastcv.lab_base.LibItem
 import cc.fastcv.lab_base.TreeActivity
 import cc.fastcv.layouts.LayoutMainActivity
@@ -16,6 +17,10 @@ class DemoMainActivity : TreeActivity() {
             LibItem(
                 "安卓Layout的相关使用", "安卓相关布局的简单使用与组合复杂使用的用法集合",
                 Intent(this, LayoutMainActivity::class.java)
+            ),
+            LibItem(
+                "安卓Bitmap的相关使用", "安卓Bitmap的相关使用集合",
+                Intent(this, BitmapMainActivity::class.java)
             ),
 
             )

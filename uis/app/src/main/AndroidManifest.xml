@@ -19,13 +19,16 @@
         <activity android:name=".star.StarActivity" />
         <activity android:name=".turntable.TurntableActivity" />
         <activity android:name=".corner_frame_layout.CornerFrameLayoutActivity" />
-        <activity android:name=".roundprogressbar.RoundProgressBarActivity" />
+        <activity android:name=".round_corner_progress_bar.RoundCornerProgressBarActivity" />
         <activity android:name=".bezier_curve.BezierCurveActivity" />
         <activity android:name=".radar_view.RadarViewActivity" />
         <activity android:name=".path_measure.PathMeasureActivity" />
         <activity android:name=".text.TextActivity" />
         <activity android:name=".inscribed_circle.InscribedCircleActivity" />
         <activity android:name=".marquee.MarqueeTextViewActivity" />
+        <activity android:name=".date_switch_view.DateSwitchViewActivity" />
+        <activity android:name=".histogram.HistogramViewActivity" />
+        <activity android:name=".round_progress_bar.RoundProgressBarActivity" />
 
     </application>
 </manifest>

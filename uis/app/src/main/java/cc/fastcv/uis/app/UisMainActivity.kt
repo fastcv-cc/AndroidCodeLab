@@ -6,13 +6,16 @@ import cc.fastcv.lab_base.TreeActivity
 import cc.fastcv.uis.app.bezier_curve.BezierCurveActivity
 import cc.fastcv.uis.app.compass.CompassActivity
 import cc.fastcv.uis.app.corner_frame_layout.CornerFrameLayoutActivity
+import cc.fastcv.uis.app.date_switch_view.DateSwitchViewActivity
 import cc.fastcv.uis.app.draw_spell.DrawSpellActivity
+import cc.fastcv.uis.app.histogram.HistogramViewActivity
 import cc.fastcv.uis.app.inscribed_circle.InscribedCircleActivity
 import cc.fastcv.uis.app.marquee.MarqueeTextViewActivity
 import cc.fastcv.uis.app.overlapping_judge.OverlappingJudgeActivity
 import cc.fastcv.uis.app.path_measure.PathMeasureActivity
 import cc.fastcv.uis.app.radar_view.RadarViewActivity
-import cc.fastcv.uis.app.roundprogressbar.RoundProgressBarActivity
+import cc.fastcv.uis.app.round_corner_progress_bar.RoundCornerProgressBarActivity
+import cc.fastcv.uis.app.round_progress_bar.RoundProgressBarActivity
 import cc.fastcv.uis.app.simple_number_clock.SimpleNumberClockActivity
 import cc.fastcv.uis.app.star.StarActivity
 import cc.fastcv.uis.app.text.TextActivity
@@ -56,7 +59,7 @@ class UisMainActivity : TreeActivity() {
             ), LibItem(
                 "带圆角的ProgressBar",
                 "带圆角的ProgressBar",
-                Intent(this, RoundProgressBarActivity::class.java)
+                Intent(this, RoundCornerProgressBarActivity::class.java)
             ), LibItem(
                 "贝塞尔曲线",
                 "贝塞尔曲线",
@@ -89,6 +92,18 @@ class UisMainActivity : TreeActivity() {
                 "指南针",
                 "简约指南针效果，配合手机地磁",
                 Intent(this, CompassActivity::class.java)
+            ), LibItem(
+                "日期选择器",
+                "日期选择器",
+                Intent(this, DateSwitchViewActivity::class.java)
+            ), LibItem(
+                "直方图图表",
+                "直方图图表",
+                Intent(this, HistogramViewActivity::class.java)
+            ), LibItem(
+                "圆角圆形进度条",
+                "自定义圆角圆形进度条，支持动态设置进度颜色，进度宽度，最大最小值等等",
+                Intent(this, RoundProgressBarActivity::class.java)
             )
         )
     }
